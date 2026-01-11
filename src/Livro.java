@@ -7,4 +7,11 @@ public class Livro {
     boolean disponivel;
     LocalDate dataCadastro;
     LocalDate dataAtualizacao;
+
+    public Livro(int id, String titulo, Autor autor, boolean disponivel) {
+        this.id = id;
+        this.titulo = titulo;
+        this.autor = autor;
+        this.disponivel = disponivel;
+    }
 }
