@@ -26,7 +26,7 @@ public class Biblioteca {
         livros.add(livro3);
     }
 
-    public void listarDisponivel(){
+    public void listarLivrosDisponiveis(){
         for(Livro livro : livros){
             if (livro.isDisponivel()){
                 System.out.println(livro.getId() + " - " + livro.getTitulo() + " - " + livro.getAutor().nome);
@@ -49,5 +49,9 @@ public class Biblioteca {
         if(!encontrou){
             System.out.println("\n======Livro não encontrado!======");
         }
+    }
+
+    public Emprestimo registrarEmprestimo(Livro livro, Cliente cliente){
+        return new Emprestimo(id,livro,cliente.getNome(),LocalDate.now());
     }
 }
