@@ -1,10 +1,12 @@
 public class Cliente {
-    private int id;
+    private static int nextId = 0;
+
+    private final int id;
     private String nome;
     private String email;
 
-    public Cliente(int id, String nome, String email) {
-        this.id = id;
+    public Cliente(String nome, String email) {
+        this.id = nextId++;
         this.nome = nome;
         this.email = email;
     }
@@ -21,9 +23,6 @@ public class Cliente {
     }
 
     // setters
-    public void setId(int id) {
-        this.id = id;
-    }
     public void setNome(String nome) {
         this.nome = nome;
     }
