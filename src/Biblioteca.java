@@ -27,11 +27,27 @@ public class Biblioteca {
     }
 
     public void listarDisponivel(){
-        System.out.println("\nLivros disponíveis:");
         for(Livro livro : livros){
-            if (livro.disponivel){
-                System.out.println("● " + livro.titulo + " - " + livro.autor.nome);
+            if (livro.isDisponivel()){
+                System.out.println(livro.getId() + " - " + livro.getTitulo() + " - " + livro.getAutor().nome);
             }
+        }
+    }
+
+    public void buscarLivroById(int id){
+        boolean encontrou = false;
+        for(Livro livro : livros){
+            if (livro.getId()==id){
+                System.out.println("\n======Livro encontrado!======");
+                System.out.println("● ID: " + livro.getId());
+                System.out.println("● Título: " + livro.getTitulo());
+                System.out.println("● Autor: " + livro.getAutor().nome);
+                System.out.println("● Disponível: " + livro.isDisponivel());
+                encontrou = true;
+            }
+        }
+        if(!encontrou){
+            System.out.println("\n======Livro não encontrado!======");
         }
     }
 }
