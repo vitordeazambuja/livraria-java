@@ -48,6 +48,12 @@ public class Biblioteca {
         }
     }
 
+    public void listarEmprestimos(){
+        for(Emprestimo emprestimo : emprestimos){
+            System.out.println("Livro: " + emprestimo.getLivro().getTitulo() + " - Nome do Cliente: " + emprestimo.getNomeCliente() + " - Data de Emprestimo: " + emprestimo.getDataEmprestimo() + " - Data de Devolucao: " + emprestimo.getDataDevolucao());
+        }
+    }
+
     // buscas
     public Livro buscarLivroById(int id){
         for(Livro livro : livros){

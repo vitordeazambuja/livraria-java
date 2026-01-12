@@ -87,6 +87,7 @@ public class Main {
                     break;
                 case 10:
                     System.out.println("\n======Lista de todos os emprestimos======");
+                    biblioteca.listarEmprestimos();
                     break;
             }
 
