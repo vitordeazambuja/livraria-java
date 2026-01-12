@@ -50,7 +50,7 @@ public class Biblioteca {
 
     public void listarEmprestimos(){
         for(Emprestimo emprestimo : emprestimos){
-            System.out.println("Livro: " + emprestimo.getLivro().getTitulo() + " - Nome do Cliente: " + emprestimo.getNomeCliente() + " - Data de Emprestimo: " + emprestimo.getDataEmprestimo() + " - Data de Devolucao: " + emprestimo.getDataDevolucao());
+            System.out.println("ID: " + emprestimo.getId() + " - Livro: " + emprestimo.getLivro().getTitulo() + " - Cliente: " + emprestimo.getCliente().getNome() + " - Data de Emprestimo: " + emprestimo.getDataEmprestimo() + " - Data de Devolucao: " + emprestimo.getDataDevolucao());
         }
     }
 
@@ -90,7 +90,7 @@ public class Biblioteca {
                 System.out.println("\n======Emprestimo encontrado!======");
                 System.out.println("● ID: " + emprestimo.getId());
                 System.out.println("● Livro: " + emprestimo.getLivro().getTitulo());
-                System.out.println("● Cliente: " + emprestimo.getNomeCliente());
+                System.out.println("● Cliente: " + emprestimo.getCliente().getNome());
                 System.out.println("● Data Emprestimo: " + emprestimo.getDataEmprestimo());
                 System.out.println("● Data Devolucao: " + emprestimo.getDataDevolucao());
                 return  emprestimo;
@@ -126,7 +126,7 @@ public class Biblioteca {
             return null;
         }
 
-        Emprestimo emprestimo = new Emprestimo(livro, cliente.getNome(), LocalDate.now());
+        Emprestimo emprestimo = new Emprestimo(livro, cliente, LocalDate.now());
         livro.setDisponivel(false);
         emprestimos.add(emprestimo);
         System.out.println("======Empréstimo registrado!======");
