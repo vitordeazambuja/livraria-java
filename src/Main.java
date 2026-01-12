@@ -17,6 +17,7 @@ public class Main {
             System.out.println("7 - Registrar cliente");
             System.out.println("8 - Listar todos os autores");
             System.out.println("9 - Registrar autor");
+            System.out.println("10 - Listar todos os emprestimos");
             System.out.println("0 - Sair\n");
             System.out.print("Opção: ");
             opcao = Integer.parseInt(sc.nextLine());
@@ -35,24 +36,44 @@ public class Main {
                     biblioteca.registrarEmprestimo(biblioteca.buscarLivroById(idLivro),biblioteca.buscarClienteById(idCliente));
                     break;
                 case 3:
+                    System.out.println("\n======Registrar devolução de livro======");
+                    System.out.print("Insira o ID do empréstimo: ");
+                    int idEmprestimo = Integer.parseInt(sc.nextLine());
+                    biblioteca.registrarDevolucao(idEmprestimo);
                     break;
                 case 4:
-                    System.out.println("\n======Busca por ID======");
+                    System.out.println("\n======Buscar livro por ID======");
                     System.out.print("Insira o ID do livro: ");
                     int id = Integer.parseInt(sc.nextLine());
                     biblioteca.buscarLivroById(id);
                     break;
                 case 5:
+                    System.out.println("\n======Registrar livro======");
+                    System.out.print("Insira o titulo do livro: ");
+                    String tituloLivro = sc.nextLine();
+                    System.out.print("Insira o ID do autor: ");
+                    int idAutor = Integer.parseInt(sc.nextLine());
+                    biblioteca.registrarLivro(tituloLivro, biblioteca.buscarAutorById(idAutor));
                     break;
                 case 6:
                     System.out.println("\n======Lista de todos os clientes======");
+                    biblioteca.listarClientes();
                     break;
                 case 7:
+                    System.out.println("\n======Registrar cliente======");
+                    System.out.print("Insira o nome: ");
+                    String nomeCliente = sc.nextLine();
+                    System.out.print("Insira o email: ");
+                    String emailCliente = sc.nextLine();
+                    biblioteca.registrarCliente(nomeCliente, emailCliente);
                     break;
                 case 8:
                     System.out.println("\n======Lista de todos os autores======");
                     break;
                 case 9:
+                    break;
+                case 10:
+                    System.out.println("\n======Lista de todos os emprestimos======");
                     break;
             }
 
