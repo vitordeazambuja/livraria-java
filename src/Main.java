@@ -19,6 +19,7 @@ public class Main {
             System.out.println("8 - Listar todos os autores");
             System.out.println("9 - Registrar autor");
             System.out.println("10 - Listar todos os emprestimos");
+            System.out.println("11 - Listar emprestimo por cliente");
             System.out.println("0 - Sair\n");
             System.out.print("Opção: ");
             opcao = Integer.parseInt(sc.nextLine());
@@ -88,6 +89,12 @@ public class Main {
                 case 10:
                     System.out.println("\n======Lista de todos os emprestimos======");
                     biblioteca.listarEmprestimos();
+                    break;
+                case 11:
+                    System.out.println("\n======Lista de emprestimo por cliente======");
+                    System.out.print("Insira o ID do cliente: ");
+                    idCliente = Integer.parseInt(sc.nextLine());
+                    biblioteca.listarEmprestimosByCliente(idCliente);
                     break;
             }
 
