@@ -6,6 +6,7 @@ public class Biblioteca {
     private List<Livro> livros = new ArrayList<>();
     private List<Autor> autores = new ArrayList<>();
     private List<Emprestimo> emprestimos = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
 
     public Biblioteca() {
         // Teste Hardcoded Autor
@@ -26,6 +27,7 @@ public class Biblioteca {
         livros.add(livro3);
     }
 
+    //listagens
     public void listarLivrosDisponiveis(){
         for(Livro livro : livros){
             if (livro.isDisponivel()){
@@ -34,8 +36,8 @@ public class Biblioteca {
         }
     }
 
-    public void buscarLivroById(int id){
-        boolean encontrou = false;
+    // buscas
+    public Livro buscarLivroById(int id){
         for(Livro livro : livros){
             if (livro.getId()==id){
                 System.out.println("\n======Livro encontrado!======");
@@ -43,15 +45,36 @@ public class Biblioteca {
                 System.out.println("● Título: " + livro.getTitulo());
                 System.out.println("● Autor: " + livro.getAutor().nome);
                 System.out.println("● Disponível: " + livro.isDisponivel());
-                encontrou = true;
+                return  livro;
             }
         }
-        if(!encontrou){
-            System.out.println("\n======Livro não encontrado!======");
-        }
+        System.out.println("\n======Livro não encontrado!======");
+        return null;
     }
 
+    public Cliente buscarClienteById(int id) {
+        for(Cliente cliente : clientes){
+            if(cliente.getId()==id){
+                System.out.println("\n======Cliente encontrado!======");
+                System.out.println("● ID: " + cliente.getId());
+                System.out.println("● Nome: " + cliente.getNome());
+                System.out.println("● Email: " + cliente.getEmail());
+                return  cliente;
+            }
+        }
+        System.out.println("\n======Cliente não encontrado!======");
+        return null;
+    }
+
+    //registros
     public Emprestimo registrarEmprestimo(Livro livro, Cliente cliente){
-        return new Emprestimo(id,livro,cliente.getNome(),LocalDate.now());
+        if(livro != null && cliente != null){
+            Emprestimo emprestimo = new Emprestimo(livro,cliente.getNome(),LocalDate.now());
+            emprestimos.add(emprestimo);
+            System.out.println("======Emprestimo registrado!======");
+            return emprestimo;
+        }
+        System.out.println("\n======Dados não encontrados!======");
+        return null;
     }
 }

@@ -27,6 +27,12 @@ public class Main {
                     biblioteca.listarLivrosDisponiveis();
                     break;
                 case 2:
+                    System.out.println("\n======Registrar empréstimo de livro======");
+                    System.out.print("Insira o ID do livro: ");
+                    int idLivro = Integer.parseInt(sc.nextLine());
+                    System.out.print("Insira o ID do cliente: ");
+                    int idCliente = Integer.parseInt(sc.nextLine());
+                    biblioteca.registrarEmprestimo(biblioteca.buscarLivroById(idLivro),biblioteca.buscarClienteById(idCliente));
                     break;
                 case 3:
                     break;
