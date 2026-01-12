@@ -12,8 +12,11 @@ public class Main {
             System.out.println("2 - Registrar empréstimo");
             System.out.println("3 - Registrar devolução");
             System.out.println("4 - Buscar livro por ID");
-            System.out.println("5 - Registrar cliente");
-            System.out.println("6 - Registrar livro");
+            System.out.println("5 - Registrar livro");
+            System.out.println("6 - Listar todos os clientes");
+            System.out.println("7 - Registrar cliente");
+            System.out.println("8 - Listar todos os autores");
+            System.out.println("9 - Registrar autor");
             System.out.println("0 - Sair\n");
             System.out.print("Opção: ");
             opcao = Integer.parseInt(sc.nextLine());
@@ -21,13 +24,29 @@ public class Main {
             switch(opcao){
                 case 1:
                     System.out.println("\n======Lista de livros disponíves======");
-                    biblioteca.listarDisponivel();
+                    biblioteca.listarLivrosDisponiveis();
+                    break;
+                case 2:
+                    break;
+                case 3:
                     break;
                 case 4:
                     System.out.println("\n======Busca por ID======");
                     System.out.print("Insira o ID do livro: ");
                     int id = Integer.parseInt(sc.nextLine());
                     biblioteca.buscarLivroById(id);
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    System.out.println("\n======Lista de todos os clientes======");
+                    break;
+                case 7:
+                    break;
+                case 8:
+                    System.out.println("\n======Lista de todos os autores======");
+                    break;
+                case 9:
                     break;
             }
 
