@@ -70,6 +70,7 @@ public class Biblioteca {
     public Emprestimo registrarEmprestimo(Livro livro, Cliente cliente){
         if(livro != null && cliente != null){
             Emprestimo emprestimo = new Emprestimo(livro,cliente.getNome(),LocalDate.now());
+            livro.setDisponivel(false);
             emprestimos.add(emprestimo);
             System.out.println("======Emprestimo registrado!======");
             return emprestimo;
