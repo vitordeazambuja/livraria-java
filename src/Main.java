@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class Main {
@@ -72,6 +73,17 @@ public class Main {
                     biblioteca.listarAutores();
                     break;
                 case 9:
+                    System.out.println("\n======Registrar autor======");
+                    System.out.print("Insira o nome: ");
+                    String nomeAutor = sc.nextLine();
+                    System.out.print("Insira o dia de nascimento: ");
+                    int diaNascimentoAutor = Integer.parseInt(sc.nextLine());
+                    System.out.print("Insira o mes de nascimento: ");
+                    int mesNascimentoAutor = Integer.parseInt(sc.nextLine());
+                    System.out.print("Insira o ano de nascimento: ");
+                    int anoNascimentoAutor = Integer.parseInt(sc.nextLine());
+                    LocalDate dataNascimento = LocalDate.of(anoNascimentoAutor,mesNascimentoAutor,diaNascimentoAutor);
+                    biblioteca.registrarAutor(nomeAutor, dataNascimento);
                     break;
                 case 10:
                     System.out.println("\n======Lista de todos os emprestimos======");

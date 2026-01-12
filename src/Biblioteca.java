@@ -160,4 +160,11 @@ public class Biblioteca {
         return cliente;
     }
 
+    public Autor registrarAutor(String nome, LocalDate dataDeNascimento) {
+        Autor autor = new Autor(nome,dataDeNascimento);
+        autores.add(autor);
+        System.out.println("======Autor registrado!======");
+        return autor;
+    }
+
 }
