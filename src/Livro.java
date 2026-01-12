@@ -36,5 +36,20 @@ public class Livro {
     }
 
     //setters
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
+    public void setDisponivel(boolean disponivel) {
+        this.disponivel = disponivel;
+    }
+    public void setDataCadastro(LocalDate dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+    public void setDataAtualizacao(LocalDate dataAtualizacao) {
+        this.dataAtualizacao = dataAtualizacao;
+    }
 
 }
