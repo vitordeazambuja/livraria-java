@@ -42,6 +42,12 @@ public class Biblioteca {
         }
     }
 
+    public void listarAutores(){
+        for(Autor autor : autores){
+            System.out.println("ID: " + autor.getId() + " - Nome: " + autor.getNome() + " - Data de Nascimento: " + autor.getDataNascimento());
+        }
+    }
+
     // buscas
     public Livro buscarLivroById(int id){
         for(Livro livro : livros){

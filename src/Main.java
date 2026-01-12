@@ -69,6 +69,7 @@ public class Main {
                     break;
                 case 8:
                     System.out.println("\n======Lista de todos os autores======");
+                    biblioteca.listarAutores();
                     break;
                 case 9:
                     break;
