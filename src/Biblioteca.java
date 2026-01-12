@@ -25,4 +25,13 @@ public class Biblioteca {
         livros.add(livro2);
         livros.add(livro3);
     }
+
+    public void listarDisponivel(){
+        System.out.println("\nLivros disponíveis:");
+        for(Livro livro : livros){
+            if (livro.disponivel){
+                System.out.println("● " + livro.titulo + " - " + livro.autor.nome);
+            }
+        }
+    }
 }
