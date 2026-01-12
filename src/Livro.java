@@ -1,18 +1,22 @@
 import java.time.LocalDate;
 
 public class Livro {
-    private int id;
+    private static int nextId = 0;
+
+    private final int id;
     private String titulo;
     private Autor autor;
     private boolean disponivel;
     private LocalDate dataCadastro;
     private LocalDate dataAtualizacao;
 
-    public Livro(int id, String titulo, Autor autor, boolean disponivel) {
-        this.id = id;
+    public Livro(String titulo, Autor autor) {
+        this.id = nextId++;
         this.titulo = titulo;
         this.autor = autor;
-        this.disponivel = disponivel;
+        this.disponivel = true;
+        this.dataCadastro = LocalDate.now();
+        this.dataAtualizacao = null;
     }
 
     // getters
