@@ -5,14 +5,14 @@ public class Emprestimo {
 
     private final int id;
     private Livro livro;
-    private String nomeCliente;
+    private Cliente cliente;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
 
-    public Emprestimo(Livro livro, String nomeCliente, LocalDate dataEmprestimo) {
+    public Emprestimo(Livro livro, Cliente cliente, LocalDate dataEmprestimo) {
         this.id = nextId++;
         this.livro = livro;
-        this.nomeCliente = nomeCliente;
+        this.cliente = cliente;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = null;
     }
@@ -26,8 +26,8 @@ public class Emprestimo {
         return livro;
     }
 
-    public String getNomeCliente() {
-        return nomeCliente;
+    public Cliente getCliente() {
+        return cliente;
     }
 
     public LocalDate getDataEmprestimo() {
@@ -43,8 +43,8 @@ public class Emprestimo {
         this.livro = livro;
     }
 
-    public void setNomeCliente(String nomeCliente) {
-        this.nomeCliente = nomeCliente;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public void setDataEmprestimo(LocalDate dataEmprestimo) {
